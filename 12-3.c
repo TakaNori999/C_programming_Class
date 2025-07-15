@@ -1,0 +1,36 @@
+#include<stdio.h>
+int main(void){
+    int array[8][8]={{0,1,1,1,1,1,1,0},
+                    {0,1,0,0,0,0,0,0},
+                    {0,1,0,0,0,0,0,0},
+                    {0,1,1,1,1,0,0,0},
+                    {0,1,0,0,0,0,0,0},
+                    {0,1,0,0,0,0,0,0},
+                    {0,1,0,0,0,0,0,0},
+                    {0,1,0,0,0,0,0,0},};
+    for(int i=0;i<8;i++){
+        for(int j=0;j<8;j++){
+            if(array[i][j]==1){
+                printf("# ");
+            }else{
+                printf(". ");
+            }
+        }printf("\n");
+    }
+    int trance[8][8];
+    for(int i=0;i<8;i++){
+        for(int j=0;j<8;j++){
+            trance[j][7-i]=array[i][j];
+        }
+    }
+    for(int i=0;i<8;i++){
+        for(int j=0;j<8;j++){
+            if(trance[i][j]==1){
+                printf("# ");
+            }else{
+                printf(". ");
+            }
+        }printf("\n");
+    }
+    return 0;
+}
